@@ -13,8 +13,8 @@
  */
 
 namespace phpFastCache\Util;
-use phpFastCache\Exceptions\phpFastCacheCoreException;
 
+use phpFastCache\Exceptions\phpFastCacheCoreException;
 
 /**
  * Class Languages
@@ -26,13 +26,12 @@ class Languages
 {
     public static function setEncoding($encoding = 'UTF-8', $language = null)
     {
-        if ($language === null || !in_array($language, array('uni', 'Japanese', 'ja', 'English', 'en'), true)) {
+        if ($language === null || !in_array($language, ['uni', 'Japanese', 'ja', 'English', 'en'], true)) {
             $language = 'uni';
         }
-        switch(strtoupper($encoding))
-        {
+        switch (strtoupper($encoding)) {
             case 'UTF-8':
-                if(extension_loaded("mbstring")) {
+                if (extension_loaded("mbstring")) {
                     mb_internal_encoding($encoding);
                     mb_http_output($encoding);
                     mb_http_input($encoding);

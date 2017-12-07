@@ -29,6 +29,19 @@ engines:
     enabled: true
   phpmd:
     enabled: true
+    checks:
+      CleanCode/ElseExpression:
+        enabled: false
+      CleanCode/BooleanArgumentFlag:
+        enabled: false
+      Controversial/Superglobals:
+        enabled: false
+      Controversial/CamelCaseVariableName:
+        enabled: false
+      Design/TooManyPublicMethods:
+        enabled: false
+      Design/NpathComplexity:
+        enabled: false
 ratings:
   paths:
   - "**.inc"
@@ -38,5 +51,8 @@ ratings:
   - "**.php"
   - "**.py"
   - "**.rb"
-exclude_paths: []
-- "src/phpFastCache/_extensions/**"
+exclude_paths:
+- "bin/**"
+- "examples/**"
+- "docs/**"
+- "tests/**"
